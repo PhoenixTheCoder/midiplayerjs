@@ -22,7 +22,7 @@ const msgBox = function(about, info, duration, target) {
             .children[0].appendChild(btncln);
     }
     function updateSlider() {
-      midiPlayer.skipToPercent(document.getElementById("midi-sus").value);
+      midiPlayer.skipToPercent(document.getElementById("midi-slider").value);
     }
     var on = false;
     makeButton("Midi Player", "laf", 4, 0, e => {

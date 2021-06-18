@@ -47,6 +47,7 @@ const msgBox = function(about, info, duration, target) {
           });
           document.getElementById("midi-slider").onchange = (() => {
             midiPlayer.skipToPercent(document.getElementById("midi-slider").value);
+              console.log("Changed");
           });
 
 

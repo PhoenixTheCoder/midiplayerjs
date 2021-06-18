@@ -21,9 +21,6 @@ const msgBox = function(about, info, duration, target) {
         document.getElementById("bottom")
             .children[0].appendChild(btncln);
     }
-    function updateSlider() {
-      midiPlayer.skipToPercent(document.getElementById("midi-slider").value);
-    }
     var on = false;
     makeButton("Midi Player", "laf", 4, 0, e => {
         if (!on) {
@@ -48,9 +45,9 @@ const msgBox = function(about, info, duration, target) {
           document.getElementById("midi-sus").addEventListener("click", function() {
             midiPlayer.sustain = !midiPlayer.sustain;
           });
-          document.getElementById("midi-slider").onchange = function goto() {
-            updateSlider();
-          } 
+          document.getElementById("midi-slider").onchange = (() => {
+            midiPlayer.skipToPercent(document.getElementById("midi-slider").value);
+          });
 
 
         } else {
